@@ -24,6 +24,10 @@
   --ng: #e8623c;           /* オレンジ（不正解） */
   --ng-text: #c24a26;
   --ng-soft: #fdf1ec;
+  --char-body: #131313;    /* キャラクター：ビットの体 */
+  --char-face: #ffffff;    /* キャラクター：ビットの顔 */
+  --char-fill: #ffffff;    /* キャラクター：フキダシの中 */
+  --char-line: #131313;    /* キャラクター：フキダシの線 */
   --font-en: "Jost", "Noto Sans JP", sans-serif;
   --font-ja: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   --ease: cubic-bezier(0.4, 0.4, 0, 1);
@@ -47,6 +51,10 @@
     --ok-soft: rgba(63, 182, 168, 0.12);
     --ng-text: #f0875f;
     --ng-soft: rgba(232, 98, 60, 0.12);
+    --char-body: #f0f0ea;
+    --char-face: #131313;
+    --char-fill: #1d1d1d;
+    --char-line: #f0f0ea;
     color-scheme: dark;
   }
 }
@@ -65,6 +73,10 @@
   --ok-soft: rgba(63, 182, 168, 0.12);
   --ng-text: #f0875f;
   --ng-soft: rgba(232, 98, 60, 0.12);
+  --char-body: #f0f0ea;
+  --char-face: #131313;
+  --char-fill: #1d1d1d;
+  --char-line: #f0f0ea;
   color-scheme: dark;
 }
 
@@ -862,8 +874,138 @@ button {
   color: var(--ok-text);
 }
 
+/* ===== キャラクター ===== */
+/* ヘッダーのすぐ下・右寄せで登場し、しばらくすると消える。タップでも閉じる */
+.mascot {
+  position: fixed;
+  top: var(--mascot-top, 16px);
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  max-width: min(380px, calc(100vw - 32px));
+  padding: 10px 16px 10px 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.mascot.is-showing {
+  animation: mascot-in 0.45s var(--ease) both;
+}
+
+.mascot.is-leaving {
+  animation: mascot-out 0.25s var(--ease) both;
+}
+
+.mascot-char {
+  flex: none;
+  width: 60px;
+  height: 60px;
+}
+
+.mascot-char svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* うれしいときはジャンプ、残念なときはゆらゆら */
+.mascot.is-showing[data-mood="happy"] .mascot-char {
+  animation: mascot-jump 0.7s var(--ease) 0.15s both;
+}
+
+.mascot.is-showing[data-mood="sad"] .mascot-char {
+  animation: mascot-sway 0.9s ease-in-out 0.15s both;
+}
+
+.mascot-bubble {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.mascot-label {
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.mascot[data-tone="ok"] .mascot-label {
+  color: var(--ok-text);
+}
+
+.mascot[data-tone="ng"] .mascot-label {
+  color: var(--ng-text);
+}
+
+/* 特別な場面の見出しはオレンジのグラデーション文字 */
+.mascot[data-tone="special"] .mascot-label {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mascot[data-tone="special"] {
+  border-color: var(--accent);
+}
+
+@keyframes mascot-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes mascot-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes mascot-jump {
+  0% { transform: none; }
+  35% { transform: translateY(-10px) rotate(-5deg); }
+  65% { transform: none; }
+  80% { transform: translateY(-3px); }
+  100% { transform: none; }
+}
+
+@keyframes mascot-sway {
+  0% { transform: none; }
+  25% { transform: rotate(-6deg); }
+  55% { transform: rotate(5deg); }
+  80% { transform: rotate(-2deg); }
+  100% { transform: none; }
+}
+
 /* ===== スマホ向け調整 ===== */
 @media (max-width: 480px) {
+  /* 画面幅いっぱいに出す */
+  .mascot {
+    left: 16px;
+    width: auto;
+  }
+
+  .mascot-char {
+    width: 52px;
+    height: 52px;
+  }
+
   /* ヘッダーを低くして、問題を表示する面積を広く取る */
   .header-inner {
     padding-top: 10px;
@@ -922,5 +1064,6 @@ button {
   *::before,
   *::after {
     transition: none !important;
+    animation: none !important;
   }
 }
