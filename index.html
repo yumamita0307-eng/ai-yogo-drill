@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>AI用語ドリル</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー：タイトル・タブ・テーマ切替 -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div>
+        <h1 class="app-title">AI用語ドリル</h1>
+        <p class="app-subtitle">AIを触り始めるための基本用語</p>
+      </div>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="テーマ切替" title="ライト／ダーク切替">◐</button>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab is-active" type="button" role="tab" data-view="quiz" aria-selected="true">テスト</button>
+      <button class="tab" type="button" role="tab" data-view="cards" aria-selected="false">単語帳</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- 読み込みエラー表示 -->
+    <p id="load-error" class="notice notice-error" hidden></p>
+
+    <!-- ===== テスト ===== -->
+    <section id="view-quiz" class="view">
+
+      <!-- 設定画面 -->
+      <div id="quiz-setup" class="panel">
+        <h2 class="panel-title">テストの設定</h2>
+
+        <fieldset class="field">
+          <legend>分野</legend>
+          <div id="category-options" class="chip-group"></div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>問題数</legend>
+          <div class="chip-group">
+            <label class="chip"><input type="radio" name="count" value="10" checked><span>10問</span></label>
+            <label class="chip"><input type="radio" name="count" value="20"><span>20問</span></label>
+            <label class="chip"><input type="radio" name="count" value="all"><span>全問</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>出題形式</legend>
+          <div class="chip-group">
+            <label class="chip"><input type="radio" name="mode" value="d2t" checked><span>説明→用語</span></label>
+            <label class="chip"><input type="radio" name="mode" value="t2d"><span>用語→説明</span></label>
+            <label class="chip"><input type="radio" name="mode" value="mix"><span>ミックス</span></label>
+          </div>
+        </fieldset>
+
+        <p id="setup-summary" class="muted"></p>
+        <button id="start-btn" class="btn btn-primary btn-block" type="button">スタート</button>
+      </div>
+
+      <!-- 出題画面 -->
+      <div id="quiz-play" class="panel" hidden>
+        <div class="progress-row">
+          <span id="progress-text" class="muted"></span>
+          <button id="quit-btn" class="btn-link" type="button">中断する</button>
+        </div>
+        <div class="progress"><div id="progress-bar" class="progress-bar"></div></div>
+
+        <span id="q-category" class="badge"></span>
+        <p id="q-label" class="q-label"></p>
+        <div id="q-text" class="q-text"></div>
+
+        <div id="options" class="options"></div>
+
+        <!-- 回答後の解説 -->
+        <div id="feedback" class="feedback" hidden>
+          <p id="feedback-result" class="feedback-result"></p>
+          <div class="feedback-term">
+            <strong id="fb-term"></strong>
+            <span id="fb-english" class="muted"></span>
+          </div>
+          <h3 class="feedback-heading">解説</h3>
+          <p id="fb-definition"></p>
+          <h3 class="feedback-heading">使い方・例</h3>
+          <p id="fb-example"></p>
+          <button id="next-btn" class="btn btn-primary btn-block" type="button">次へ</button>
+        </div>
+      </div>
+
+      <!-- 結果画面 -->
+      <div id="quiz-result" class="panel" hidden>
+        <h2 class="panel-title">結果</h2>
+        <div class="score">
+          <span id="score-rate" class="score-rate"></span>
+          <span id="score-detail" class="muted"></span>
+        </div>
+
+        <h3 class="section-heading">分野別正答率</h3>
+        <ul id="category-stats" class="stats"></ul>
+
+        <div id="wrong-section">
+          <h3 class="section-heading">間違えた用語</h3>
+          <ul id="wrong-list" class="wrong-list"></ul>
+        </div>
+
+        <div class="btn-row">
+          <button id="retry-wrong-btn" class="btn btn-primary" type="button">間違えた問題だけ再挑戦</button>
+          <button id="back-setup-btn" class="btn" type="button">設定に戻る</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 単語帳 ===== -->
+    <section id="view-cards" class="view" hidden>
+      <div class="cards-toolbar">
+        <select id="card-category" class="select" aria-label="分野で絞り込み">
+          <option value="all">すべての分野</option>
+        </select>
+        <label class="switch">
+          <input id="only-unlearned" type="checkbox">
+          <span>未習得のみ</span>
+        </label>
+      </div>
+      <p id="learned-count" class="muted"></p>
+      <div id="card-grid" class="card-grid"></div>
+      <p id="cards-empty" class="notice" hidden>表示する用語はありません。すべて覚えました！</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+[
+  {
+    "category": "AIツール",
+    "term": "ChatGPT",
+    "english": "OpenAI",
+    "definition": "OpenAIが提供する対話型の生成AI。文章作成・要約・アイデア出しなど幅広く使える。",
+    "example": "生成AIの代名詞的な存在で、最初に触る人が多い。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Claude",
+    "english": "Anthropic",
+    "definition": "Anthropicが提供する生成AI。長い資料の読み込みや、自然な日本語の文章作成が得意とされる。",
+    "example": "契約書や議事録など長い文書の要約によく使われる。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Claude Code",
+    "english": "Anthropic",
+    "definition": "ターミナルやVS Codeで動く、Claudeのコーディング用AI。指示するとファイルの作成・修正やコマンドの実行まで進めてくれる。",
+    "example": "フォルダを開いて「クイズアプリを作って」と頼むと、必要なファイルを一式作ってくれる。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Gemini",
+    "english": "Google",
+    "definition": "Googleが提供する生成AI。GmailやGoogleドキュメントなど、Googleのサービスと連携しやすい。",
+    "example": "Google Workspaceを使っている会社では導入しやすい。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Microsoft Copilot",
+    "english": "Microsoft",
+    "definition": "Microsoftが提供するAIアシスタント。Word・Excel・PowerPoint・TeamsなどのOfficeアプリの中で使える。",
+    "example": "Teams会議の要約や、Excelデータの分析を頼める。"
+  },
+  {
+    "category": "AIツール",
+    "term": "GitHub Copilot",
+    "english": "GitHub / Microsoft",
+    "definition": "エディタの中でコードの続きを提案したり、質問に答えたりしてくれるプログラミング支援AI。",
+    "example": "VS Codeに拡張機能として入れて使うのが一般的。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Cursor",
+    "english": "AI Code Editor",
+    "definition": "AI機能を組み込んだコードエディタ。VS Codeをもとに作られていて、AIと会話しながら開発できる。",
+    "example": "VS Codeと操作感が近いので乗り換えやすい。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Codex",
+    "english": "OpenAI",
+    "definition": "OpenAIが提供するコーディング用のAIエージェント。コードの作成や修正を任せられる。",
+    "example": "Claude Codeと並んでよく比較されるツール。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Perplexity",
+    "english": "AI Search",
+    "definition": "Web検索とAIを組み合わせ、出典（参照元のリンク）付きで答えてくれるAI検索サービス。",
+    "example": "最新情報の調べものや、情報源を確認したいときに便利。"
+  },
+  {
+    "category": "AIツール",
+    "term": "NotebookLM",
+    "english": "Google",
+    "definition": "アップロードした資料だけをもとに、要約や質問への回答をしてくれるGoogleのAIノート。",
+    "example": "社内マニュアルを入れて、Q&Aボットのように使える。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Midjourney",
+    "english": "Image Generation",
+    "definition": "文章で指示すると、イラストや写真風の画像を生成してくれるAIサービス。",
+    "example": "広告やSNS用のイメージ画像づくりに使われる。"
+  },
+  {
+    "category": "AIツール",
+    "term": "DeepL",
+    "english": "AI Translation",
+    "definition": "AIを使った翻訳サービス。自然な訳文に定評がある。",
+    "example": "海外の資料やメールの読み書きに便利。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Notion AI",
+    "english": "Notion",
+    "definition": "メモ・資料管理ツールのNotionに組み込まれたAI機能。議事録の要約や文章作成ができる。",
+    "example": "社内Wikiをまとめている会社で活用しやすい。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Dify",
+    "english": "No-code AI App Builder",
+    "definition": "プログラミングをほとんどせずに、チャットボットなどのAIアプリを作れるツール。",
+    "example": "社内FAQボットを短期間で試作するときに使われる。"
+  },
+  {
+    "category": "AIツール",
+    "term": "Canva（AI機能）",
+    "english": "Canva",
+    "definition": "デザインツールCanvaに搭載されたAI機能。文章からの画像生成やデザイン作成を手伝ってくれる。",
+    "example": "チラシやSNS投稿画像をすばやく作れる。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "デプロイ",
+    "english": "Deploy",
+    "definition": "作ったアプリやWebサイトをサーバーに配置し、インターネット上で使える状態にすること。",
+    "example": "「ローカルで完成 → デプロイして公開」という流れで進める。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "デバッグ",
+    "english": "Debug",
+    "definition": "プログラムの不具合（バグ）の原因を探して、直す作業。",
+    "example": "エラーメッセージをAIに貼り付けると、デバッグを手伝ってくれる。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "バグ",
+    "english": "Bug",
+    "definition": "プログラムの誤りや、意図しない動きをする不具合のこと。",
+    "example": "「ボタンを押しても反応しない」などはバグの典型。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "エラーメッセージ",
+    "english": "Error Message",
+    "definition": "問題が起きたときに表示される、原因や発生場所を知らせるメッセージ。",
+    "example": "一部だけでなく丸ごとコピーしてAIに伝えるのが解決の近道。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "ターミナル",
+    "english": "Terminal",
+    "definition": "文字でコマンドを入力して、パソコンを操作するための画面。",
+    "example": "Claude Codeはターミナルで「claude」と入力して起動する。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "コマンド",
+    "english": "Command",
+    "definition": "ターミナルに入力する、パソコンへの命令文。",
+    "example": "「cd」でフォルダを移動、「ls」でフォルダの中身を表示。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "ディレクトリ",
+    "english": "Directory",
+    "definition": "フォルダのこと。ターミナルや開発の場面では、フォルダをディレクトリと呼ぶことが多い。",
+    "example": "「作業ディレクトリ」＝今いるフォルダ。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "エディタ",
+    "english": "Editor",
+    "definition": "プログラムや文章を書いて編集するためのソフト。",
+    "example": "VS CodeやCursorが代表的なエディタ。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "VS Code",
+    "english": "Visual Studio Code",
+    "definition": "Microsoftが提供する無料のコードエディタ。拡張機能でAIツールなどを追加できる。",
+    "example": "Claude CodeやGitHub Copilotを入れて開発するのが定番。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "拡張機能",
+    "english": "Extension",
+    "definition": "エディタやブラウザに、あとから機能を追加する小さなプログラム。",
+    "example": "VS Codeの「Live Server」で、保存するたびに画面が自動更新される。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "インストール",
+    "english": "Install",
+    "definition": "ソフトやツールをパソコンに入れて、使える状態にすること。",
+    "example": "ツールを使う前に、まずインストールが必要。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "ライブラリ",
+    "english": "Library",
+    "definition": "よく使う機能をまとめた、再利用できるプログラムの部品。",
+    "example": "グラフ表示などを一から作らず、ライブラリを使って楽をする。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "npm",
+    "english": "Node Package Manager",
+    "definition": "JavaScriptのライブラリやツールをインストール・管理するための仕組み。",
+    "example": "「npm install」で必要な部品をまとめてインストールする。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "Git",
+    "english": "Git",
+    "definition": "ファイルの変更履歴を記録・管理するツール。いつでも前の状態に戻せる。",
+    "example": "AIに大きな修正を頼む前にGitで記録しておくと安心。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "GitHub",
+    "english": "GitHub",
+    "definition": "Gitで管理しているファイルを、インターネット上に保存・共有できるサービス。",
+    "example": "チームでの共同作業や、作ったものの公開に使う。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "リポジトリ",
+    "english": "Repository",
+    "definition": "Gitで管理されているプロジェクトの保管場所。「リポ」と略されることもある。",
+    "example": "アプリ1つにつき、リポジトリを1つ作るのが基本。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "コミット",
+    "english": "Commit",
+    "definition": "ファイルの変更内容を、Gitに1つの記録として保存すること。",
+    "example": "「ログイン画面を追加」のように、変更内容のメモを付けて記録する。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "プッシュ",
+    "english": "Push",
+    "definition": "手元のパソコンで記録した変更（コミット）を、GitHubなどのネット上の保管場所へ送ること。",
+    "example": "コミットしただけでは手元に記録が残るだけ。プッシュして初めて共有される。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "ローカル環境",
+    "english": "Local",
+    "definition": "自分のパソコンの中にある作業環境のこと。",
+    "example": "「ローカルでは動くのに、公開すると動かない」はよくある相談。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "本番環境",
+    "english": "Production",
+    "definition": "実際のお客さんや利用者が使っている、公開中の環境。",
+    "example": "本番環境を直接いじらず、ローカルで試してから反映する。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "localhost",
+    "english": "ローカルホスト",
+    "definition": "自分のパソコンの中で動かしているサーバーを表すアドレス。",
+    "example": "「localhost:3000」を開くと、作成中のアプリを確認できる。"
+  },
+  {
+    "category": "操作・開発",
+    "term": "ビルド",
+    "english": "Build",
+    "definition": "書いたプログラムを、実際に動かしたり公開したりできる形にまとめて変換すること。",
+    "example": "デプロイの前にビルドを行うのが一般的な流れ。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "生成AI",
+    "english": "Generative AI",
+    "definition": "文章・画像・音声などを新しく作り出せるAIのこと。",
+    "example": "ChatGPT、Claude、Geminiなどが代表例。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "LLM（大規模言語モデル）",
+    "english": "Large Language Model",
+    "definition": "大量の文章を学習して、文章を理解したり作ったりできるAIの中身（エンジン）。",
+    "example": "ChatGPTやClaudeなどの対話AIの中身にあたる。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "モデル",
+    "english": "Model",
+    "definition": "AIの頭脳にあたる本体。同じサービスでも、性能や速さの違う複数のモデルから選べることがある。",
+    "example": "難しい作業は高性能モデル、簡単な作業は速いモデルと使い分ける。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "プロンプト",
+    "english": "Prompt",
+    "definition": "AIに入力する指示や質問の文章。",
+    "example": "「誰向けに・何を・どんな形式で」を書くと、出力が安定しやすい。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "トークン",
+    "english": "Token",
+    "definition": "AIが文章を処理するときの細かな単位。料金や入力できる量の計算に使われる。",
+    "example": "長い資料を読ませるほどトークンを多く使う。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "ハルシネーション",
+    "english": "Hallucination",
+    "definition": "AIが事実と違う内容を、もっともらしく答えてしまう現象。",
+    "example": "数字や固有名詞は、必ず人が確認するようにする。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "コンテキスト",
+    "english": "Context",
+    "definition": "AIがその会話の中で把握している情報や前提のこと。",
+    "example": "会話が長くなると最初の指示を忘れやすいので、話題が変わったら新しいチャットにする。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "セッション",
+    "english": "Session",
+    "definition": "AIとの一連のやり取りのまとまり。新しいセッションを始めると、会話の記憶はリセットされる。",
+    "example": "別の案件の作業は、新しいセッションで始めると混ざらない。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "カスタム指示",
+    "english": "Custom Instructions",
+    "definition": "AIに毎回守ってほしいルールや前提を、あらかじめ設定しておく機能。",
+    "example": "「回答は日本語で、結論から書く」などを登録しておく。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "CLAUDE.md",
+    "english": "Claude Code",
+    "definition": "Claude Codeが作業開始時に自動で読み込む、プロジェクトの説明書となるファイル。",
+    "example": "アプリの目的やルールを書いておくと、毎回説明しなくて済む。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "スラッシュコマンド",
+    "english": "Slash Command",
+    "definition": "「/」から始まる、AIツールの機能を呼び出すための短い命令。",
+    "example": "Claude Codeでは「/clear」で会話をリセット、「/exit」で終了。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "API",
+    "english": "Application Programming Interface",
+    "definition": "ソフトウェア同士が機能やデータをやり取りするための窓口。",
+    "example": "自社のシステムから、API経由でAIを呼び出して使う。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "APIキー",
+    "english": "API Key",
+    "definition": "APIを利用するための、パスワードのような鍵の文字列。",
+    "example": "他人に見せたり、GitHubに公開したりしてはいけない。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "AIエージェント",
+    "english": "AI Agent",
+    "definition": "目標を伝えると、自分で手順を考えてツールを使いながら作業を進めてくれるAI。",
+    "example": "調べもの→資料作成→保存までを任せられる。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "MCP",
+    "english": "Model Context Protocol",
+    "definition": "AIと外部のツールやデータをつなぐための共通の接続ルール。",
+    "example": "AIからカレンダーやファイル、社内システムを操作できるようになる。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "RAG",
+    "english": "検索拡張生成",
+    "definition": "社内資料などから関連する情報を探し出し、その内容をもとにAIに回答させる仕組み。",
+    "example": "「社内マニュアルに答えるチャットボット」の定番の作り方。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "マルチモーダル",
+    "english": "Multimodal",
+    "definition": "文章だけでなく、画像・音声・PDFなど複数の種類のデータを扱えること。",
+    "example": "手書きメモの写真を読み取って、文章にまとめてもらう。"
+  },
+  {
+    "category": "AIの基本",
+    "term": "利用制限",
+    "english": "Rate Limit",
+    "definition": "一定時間の中でAIを使える回数や量の上限。",
+    "example": "上限に達すると、時間を置くか有料プランに切り替える必要がある。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "DX",
+    "english": "Digital Transformation",
+    "definition": "デジタル技術を使って、仕事の進め方やビジネスそのものを良い方向に変えていく取り組み。",
+    "example": "ツールを入れるだけでなく、仕事のやり方まで見直すのがポイント。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "業務効率化",
+    "english": "Efficiency",
+    "definition": "ムダを減らし、同じ仕事をより短い時間や少ない手間でできるようにすること。",
+    "example": "「日報作成が1日30分→5分に」のように数字で示すと伝わる。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "自動化",
+    "english": "Automation",
+    "definition": "人が手作業で行っていた作業を、ツールやAIに自動で行わせること。",
+    "example": "問い合わせメールの内容を自動で表にまとめる、など。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "PoC（お試し導入）",
+    "english": "Proof of Concept",
+    "definition": "本格導入の前に、小さな範囲で試して効果があるかを確かめること。",
+    "example": "まず1部署・1業務で試して、効果が出たら広げる。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "ノーコード",
+    "english": "No-code",
+    "definition": "プログラミングをせずに、画面操作だけでアプリや仕組みを作れること。",
+    "example": "現場の担当者が自分で業務ツールを作れるようになる。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "SaaS",
+    "english": "Software as a Service",
+    "definition": "インストールせず、インターネット経由で利用するソフトウェアのサービス。月額料金が多い。",
+    "example": "ChatGPTやNotionなどもSaaSの一種。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "クラウド",
+    "english": "Cloud",
+    "definition": "自社でサーバーを持たずに、インターネット上のサービスやサーバーを利用する形。",
+    "example": "データをクラウドに置けば、どこからでもアクセスできる。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "ROI（費用対効果）",
+    "english": "Return on Investment",
+    "definition": "かけた費用に対して、どれだけの効果や利益があったかを示す指標。",
+    "example": "「月額3,000円で月10時間削減」など、導入効果の説明に使う。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "AI利用ガイドライン",
+    "english": "AI Guidelines",
+    "definition": "社内でAIを安全に使うためのルールをまとめたもの。",
+    "example": "「顧客の個人情報は入力しない」などを定める。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "情報漏洩",
+    "english": "Data Leakage",
+    "definition": "社外に出してはいけない情報が、外部に漏れてしまうこと。",
+    "example": "機密情報をそのままAIに入力しないよう注意する。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "オプトアウト（学習オフ）",
+    "english": "Opt-out",
+    "definition": "入力した内容をAIの学習に使わせないように設定すること。",
+    "example": "業務で使う前に、学習オフの設定や法人プランを確認する。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "著作権",
+    "english": "Copyright",
+    "definition": "文章・画像・音楽などの創作物を作った人が持つ権利。",
+    "example": "AIで作った画像が既存の作品に似すぎていないか確認する。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "シャドーAI",
+    "english": "Shadow AI",
+    "definition": "会社が許可していないAIツールを、社員が勝手に業務で使うこと。",
+    "example": "禁止するより、安全に使える公式ツールを用意する方が効果的。"
+  },
+  {
+    "category": "仕事・導入",
+    "term": "ヒューマン・イン・ザ・ループ",
+    "english": "Human-in-the-Loop",
+    "definition": "AIに任せきりにせず、途中で人が確認・判断する工程を入れること。",
+    "example": "AIがメールを下書き → 人が確認してから送信。"
+  }
+]
