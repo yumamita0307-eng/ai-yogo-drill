@@ -221,7 +221,7 @@ function answer(choice) {
 
   // 解説と使い方・例を表示
   const result = $('feedback-result');
-  result.textContent = correct ? '⭕ 正解！' : '❌ 不正解';
+  result.textContent = correct ? '正解！' : '不正解';
   result.className = `feedback-result ${correct ? 'ok' : 'ng'}`;
   $('fb-term').textContent = q.item.term;
   $('fb-english').textContent = q.item.english;
