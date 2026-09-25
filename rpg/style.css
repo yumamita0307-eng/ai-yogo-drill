@@ -1,0 +1,474 @@
+/*
+  デザインの考え方（昔ながらのRPG風）
+  - 黒い画面に、白い枠のウィンドウ。文字はドット風フォント（DotGothic16）
+  - 選択肢は ▶ カーソルで選ぶコマンド式。メッセージは1文字ずつ表示
+  - ゲーム画面なので常に暗い配色（ライト／ダークの切替はしない）
+*/
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #a8a8a8;
+  --low: #f2a03c;     /* HPが少ないとき */
+  --dead: #ff4d4d;    /* HPが0のとき */
+  --gold: #f2c94c;
+  --font: "DotGothic16", "Hiragino Kaku Gothic ProN", monospace;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  -webkit-text-size-adjust: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+/* ===== 全体 ===== */
+.game {
+  max-width: 560px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* 白い枠のウィンドウ（外側に黒い縁取りを入れて、枠を二重に見せる） */
+.window {
+  margin: 0;
+  background: #000;
+  border: 3px solid var(--text);
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px #000, 0 0 0 4px #333;
+  padding: 12px 16px;
+}
+
+/* ===== タイトル ===== */
+.title-logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 0 16px;
+}
+
+.title-sub {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.title-main {
+  margin: 0;
+  font-size: clamp(2.6rem, 13vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  text-shadow: 4px 4px 0 #3a3a3a;
+}
+
+.title-copy {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+/* ===== 名前入力 ===== */
+.name-window {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30vh;
+}
+
+.name-input {
+  background: #000;
+  border: none;
+  border-bottom: 2px solid var(--text);
+  padding: 6px 2px;
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.name-input::placeholder {
+  color: #555;
+}
+
+.name-submit {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.name-submit:hover,
+.name-submit:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+/* ===== ステータス ===== */
+.status-window p {
+  margin: 0;
+}
+
+.status-name {
+  border-bottom: 1px solid #555;
+  margin-bottom: 4px !important;
+  padding-bottom: 2px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status-row span:first-child {
+  color: var(--muted);
+}
+
+/* 戦闘中は横並びのコンパクト表示 */
+.status-compact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+}
+
+.status-compact .status-name {
+  border: none;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.status-compact .status-row {
+  gap: 8px;
+}
+
+.status-window.is-low {
+  border-color: var(--low);
+  color: var(--low);
+}
+
+.status-window.is-dead {
+  border-color: var(--dead);
+  color: var(--dead);
+}
+
+.status-window.is-low .status-row span:first-child,
+.status-window.is-dead .status-row span:first-child {
+  color: inherit;
+}
+
+/* ===== ワールドマップ ===== */
+.map-areas {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  display: grid;
+  gap: 0;
+}
+
+/* エリアを点線でつないだ道のように見せる */
+.map-area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px 10px 40px;
+}
+
+.map-area::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  background: var(--text);
+}
+
+.map-area:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: calc(50% + 8px);
+  height: calc(100% - 16px);
+  border-left: 2px dotted #666;
+}
+
+.map-area.is-cleared::before {
+  background: var(--gold);
+}
+
+.map-area.is-locked {
+  color: #555;
+}
+
+.map-area.is-locked::before {
+  background: #333;
+}
+
+.map-badge {
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+.map-area.is-locked .map-badge {
+  color: #555;
+}
+
+/* ===== 戦闘 ===== */
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 250px;
+  padding: 8px 0 4px;
+}
+
+.area-name {
+  margin: 0 0 auto;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.monster {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.monster svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.monster-name {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+}
+
+.monster-hp {
+  margin: 0;
+  min-height: 1.4em;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.question-label {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+.question-text {
+  margin: 0;
+}
+
+.question-text.is-term span {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.question-text.is-term small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ===== メッセージ ===== */
+.message-window {
+  position: relative;
+  min-height: 116px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.message-text {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.message-next {
+  position: absolute;
+  right: 14px;
+  bottom: 6px;
+  font-size: 0.8rem;
+  visibility: hidden;
+}
+
+.message-window.can-next .message-next {
+  visibility: visible;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+/* ===== コマンド ===== */
+.command-window {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+}
+
+.cmd {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  text-align: left;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.cmd + .cmd {
+  border-top: 1px dashed #333;
+}
+
+.cmd-cursor {
+  flex: none;
+  visibility: hidden;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+.cmd.is-focused .cmd-cursor {
+  visibility: visible;
+}
+
+.cmd.is-focused {
+  color: var(--gold);
+}
+
+/* 最後の「にげる」「もどる」は少し控えめに */
+.cmd:last-child:not(:first-child) .cmd-label {
+  color: var(--muted);
+}
+
+.cmd.is-focused:last-child .cmd-label {
+  color: var(--gold);
+}
+
+.cmd:focus-visible {
+  outline: 1px dashed var(--gold);
+}
+
+/* ===== 演出 ===== */
+.monster.is-appear {
+  animation: appear 0.5s steps(5) both;
+}
+
+.monster.is-hit {
+  animation: hit 0.45s steps(1) both;
+}
+
+.monster.is-defeated {
+  animation: defeated 0.7s steps(7) both;
+}
+
+.game.is-shake {
+  animation: shake 0.4s steps(8) both;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ダメージを受けたモンスターは点滅する */
+@keyframes hit {
+  0%, 40%, 80% { opacity: 0; }
+  20%, 60%, 100% { opacity: 1; }
+}
+
+@keyframes defeated {
+  from { opacity: 1; filter: brightness(1); }
+  to { opacity: 0; filter: brightness(3); }
+}
+
+/* 攻撃を受けると画面がゆれる */
+@keyframes shake {
+  0%, 100% { transform: none; }
+  25% { transform: translate(-6px, 2px); }
+  50% { transform: translate(5px, -2px); }
+  75% { transform: translate(-3px, 1px); }
+}
+
+/* ===== スマホ向け ===== */
+@media (max-width: 420px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  .field {
+    min-height: 210px;
+  }
+
+  .monster {
+    min-height: 120px;
+  }
+
+  .monster svg {
+    width: auto;
+    max-height: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

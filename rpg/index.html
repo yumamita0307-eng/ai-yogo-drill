@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <title>AI用語クエスト</title>
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <!-- ドット文字のフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" class="game">
+    <!-- 読み込みエラー -->
+    <p id="load-error" class="window" hidden></p>
+
+    <!-- タイトル -->
+    <section id="screen-title" class="screen" hidden>
+      <div class="title-logo">
+        <p class="title-sub">〜 ことばの ちからで せかいを すくえ 〜</p>
+        <h1 class="title-main">AI用語<br>クエスト</h1>
+        <p class="title-copy">AIを さわりはじめる ひとの ための<br>ことばの ぼうけん</p>
+      </div>
+    </section>
+
+    <!-- 名前入力 -->
+    <section id="screen-name" class="screen" hidden>
+      <form id="name-form" class="window name-window">
+        <label for="name-input">あなたの なまえを おしえてください</label>
+        <input id="name-input" class="name-input" type="text" maxlength="6" autocomplete="off" placeholder="ゆうしゃ">
+        <button class="name-submit" type="submit">▶ けってい</button>
+      </form>
+    </section>
+
+    <!-- ワールドマップ -->
+    <section id="screen-map" class="screen" hidden>
+      <div id="map-status" class="window status-window"></div>
+      <ol id="map-areas" class="map-areas"></ol>
+    </section>
+
+    <!-- 戦闘 -->
+    <section id="screen-battle" class="screen" hidden>
+      <div id="battle-status" class="window status-window status-compact"></div>
+      <div class="field">
+        <p id="area-name" class="area-name"></p>
+        <div id="monster" class="monster"></div>
+        <p id="monster-name" class="monster-name"></p>
+        <p id="monster-hp" class="monster-hp" aria-label="モンスターの のこりHP"></p>
+      </div>
+      <div id="question" class="window question-window" hidden>
+        <p id="question-label" class="question-label"></p>
+        <p id="question-text" class="question-text"></p>
+      </div>
+    </section>
+
+    <!-- エンディング -->
+    <section id="screen-ending" class="screen" hidden>
+      <div class="title-logo">
+        <p class="title-sub">〜 CONGRATULATIONS 〜</p>
+        <h1 class="title-main">へいわが<br>もどった</h1>
+      </div>
+      <div id="ending-status" class="window status-window"></div>
+    </section>
+
+    <!-- メッセージとコマンド（どの画面でも共通で使う） -->
+    <div id="message" class="window message-window" hidden>
+      <p id="message-text" class="message-text"></p>
+      <span class="message-next" aria-hidden="true">▼</span>
+    </div>
+    <div id="commands" class="window command-window" role="menu" hidden></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
